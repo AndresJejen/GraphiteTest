@@ -1,0 +1,4 @@
+setuptools
+fastapi[all]
+requests
+sqlalchemy

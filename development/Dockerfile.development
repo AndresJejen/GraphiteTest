@@ -1,0 +1,6 @@
+FROM python:alpine
+WORKDIR /app
+COPY . /app
+RUN apk update
+RUN apk add gcc g++ wget build-base curl
+EXPOSE 5050
