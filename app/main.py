@@ -1,5 +1,4 @@
-from fastapi import Depends, FastAPI
-from fastapi.middleware.cors import CORSMiddleware
+from fastapi import FastAPI
 from .utils import execute_query
 
 app = FastAPI()

@@ -1,5 +1,8 @@
 from sqlalchemy import create_engine
-from sqlalchemy import text
+import os
+
+DB_INFO="test_graphite"
+DB_HOST=os.getenv("DB_HOST")
 
 QUERY = """
 with tf as (
@@ -37,7 +40,7 @@ LIMIT {limit}
 """
 
 def execute_query(url, limit):
-    engine = create_engine("postgresql+psycopg2://test_graphite:test_graphite@testgraphite.cqwg91rhslbj.us-east-1.rds.amazonaws.com/test_graphite")
+    engine = create_engine(f"postgresql+psycopg2://{DB_INFO}:{DB_INFO}@{DB_HOST}/{DB_INFO}")
     with engine.connect() as con:
         rs = con.execute(QUERY.format(url=url, limit=limit))
         #rs = con.execute(text("select 'Hello' as term, 1 as value"))

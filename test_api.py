@@ -4,7 +4,7 @@ import requests
 
 def main(url, limit):
     params = {'url': url, 'limit': limit}
-    result=requests.get(url="http://localhost:5050/tfidf",params=params)
+    result=requests.get(url="http://localhost:5555/tfidf",params=params)
     print(result.json())
 
 if __name__ == "__main__":

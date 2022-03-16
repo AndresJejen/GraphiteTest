@@ -1,6 +1,0 @@
-FROM alpine:latest
-WORKDIR /app
-COPY . /app
-RUN apk update
-RUN apk add sqlite gcc g++ wget -y
-EXPOSE 5050
